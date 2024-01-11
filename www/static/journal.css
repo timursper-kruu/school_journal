@@ -1,0 +1,51 @@
+/**  
+ *   ЭЛЕКТРОННЫЙ ЖУРНАЛ «ШКАЛА»: СТИЛИ СТРАНИЦ ИНТЕРФЕЙСА УЧАЩЕГОСЯ
+ *   Copyright © 2019, А.М.Гольдин. Modified BSD License
+ */
+
+#journal {
+   margin-top:-25px; padding-bottom:0px;}
+#journal div {
+   margin:5px 2px; display:inline-block;}
+#journal select {
+   display:none; margin:2px auto 10px;}
+#journal img {
+   margin-top:100px;}
+   
+/* СООБЩЕНИЕ О НАЛИЧИИ НОВЫХ ЗАМЕТОК
+   ----------------------------------------------------- */
+@keyframes changeBckgr {from {background:#336633;} to {background:#339933;}}
+aside {
+   display:none; position:fixed; top:35px; right:10px; background:#339933;
+   width:40px; height:40px; border-radius:50%; cursor:pointer; z-index:99998; 
+   animation: changeBckgr 1s infinite alternate;}
+   
+/* ТЕМЫ, Д/З, ОТМЕТКИ, ВЕСА ОТМЕТОК
+   ----------------------------------------------------- */
+#journal table {
+   width:100%; border-collapse:collapse;}
+#journal table th, #journal table td {
+   padding:2px 5px; border:1px solid #963;}
+#journal table td:nth-child(3), #journal table td:nth-child(4) {
+   text-align:left;}
+#journal table tr.it {
+   background:#e6ded5; font-weight:bold;}
+#journal table tr.it td:nth-child(2) { /* вес итоговой отметки не показываем */
+   color:#e6ded5;}
+table#allSb {  /* таблица с отметками по всем предметам */
+   margin-bottom: 48px;}
+table#allSb td {
+   text-align:left;}
+
+table#jrnStat {
+   width:auto; margin:auto; border-collapse:collapse; margin-bottom:100px;}
+table#jrnStat th, table#jrnStat td, table#jrnStat td:nth-child(n) {
+   text-align:center; padding:5px 10px; border:1px solid #963;}
+table#jrnStat td:first-child {
+   text-align:left;}
+
+/* МОБИЛЬНАЯ ВЕРСИЯ
+   ----------------------------------------------------- */
+@media (max-width: 960px) {
+   
+}

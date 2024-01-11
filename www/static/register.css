@@ -1,0 +1,131 @@
+/**  
+ *   ЭЛЕКТРОННЫЙ ЖУРНАЛ «ШКАЛА»: СТИЛИ СТРАНИЦ С ОТМЕТКАМИ И ТЕМАМИ УРОКОВ
+ *   Copyright © 2020, А.М.Гольдин. Modified BSD License
+ */
+
+#register, #vdreg {
+   margin-top:-25px; padding-bottom:0px;}
+#register div, #vdreg div {
+   margin:5px 2px; display:inline-block;}
+#register select, #vdreg select {
+   margin:2px;}
+#register img, #vdreg img {
+   margin-top:100px;}
+   
+/* ОТМЕТКИ
+   ----------------------------------------------------- */
+div#regGrades, div#vdGrades {
+   width:calc(100% - 430px); text-align:left; position:relative;
+   margin-bottom:50px;}
+div#regGrades div, div#vdGrades div {
+   width:calc(100% - 10em - 10px); margin-top:0px; margin-left:calc(10em + 5px);
+   overflow-x:auto; text-align:left; white-space:nowrap;}
+div#regGrades table, div#vdGrades table {
+   display:inline-block; border-collapse:collapse;
+   border-top:2px solid #963; border-bottom:2px solid #963;}
+div#regGrades table td, div#vdGrades table td {
+   width:42px; text-align:center; padding:2px; white-space:nowrap;
+   border:1px solid #963; border-left:none;}
+div#vdGrades table td small {
+   color:#630; position: relative; bottom: 1px; font-size: 0.8em;
+   display: inline-block; width: 2em; text-align: right; padding-right: 3px;}
+div#regGrades table tr:nth-child(even), div#vdGrades table tr:nth-child(even) {
+   background:#edeae7;}
+div#regGrades table.grIt td, div#vdGrades table.grIt td {
+   background:#e6ded5; font-weight:bold;}
+div#regGrades table tr:first-child td, div#vdGrades table tr:first-child td {
+   color:#963;}
+div#regGrades table tr:first-child td:hover,
+div#vdGrades  table tr:first-child td:hover {
+   cursor:pointer;}
+div#regGrades > table, div#vdGrades > table {
+   position:absolute; top:0px; left:0px;}
+div#regGrades > table td, div#vdGrades > table td {
+   text-align:left; border-left:1px solid #963; width:10em; max-width:10em;
+   white-space:nowrap; overflow:hidden; text-overflow:ellipsis; cursor:pointer;}
+div#regGrades table tr:nth-child(2) td,
+div#vdGrades  table tr:nth-child(2) td {
+   font-weight:bold; color:gray; border-bottom-width:2px}
+div#regGrades table tr:nth-child(2) td.r,
+div#vdGrades  table tr:nth-child(2) td.r {
+   text-align:right;}
+div#regGrades input, div#vdGrades input {
+   width:38px; height:calc(100% - 4px); border:none; border-radius:0px;
+   margin:0px; padding:0px; font-family:fnt; text-align:center; outline:none;}
+
+/* ТЕМЫ УРОКОВ
+   ----------------------------------------------------- */
+div#regTopics, div#vdTopics {
+   width:400px; vertical-align:top;
+   height:calc(100vh - 150px);}
+div#regNewTopic, div#vdNewTopic {
+   display:block; margin:0px; height:150px;}
+div#regNewTopic h3, div#vdNewTopic h3 {
+   font-size:12pt; margin-bottom:0px;}
+div#regNewTopic textarea, div#vdNewTopic textarea {
+   display:block; width:calc(100% - 10px); height:55px;
+   font:12pt fnt, sans-serif; resize:none; margin:3px; padding:2px;
+   overflow:auto; border:1px solid #963; border-radius:3px;}
+div#regTopHTask, div#vdTopHTask {
+   display:block; width:calc(100% - 10px); height:19px; background:white;
+   font-size:12pt; color:gray; text-align:left; margin:0px 3px 3px 3px;
+   padding:2px; border:1px solid #963; border-radius:3px;
+   white-space:nowrap; overflow:hidden;}
+div#regNewTopic input[type=number], div#vdNewTopic input[type=number] {
+   width:2em; font-size:11pt; margin:0px 10px 0px 0px;}
+div#regNewTopic button, div#vdNewTopic button {
+   margin:0px;}
+div#regNewTopic button#sLnk, div#vdNewTopic button#vdLnk {
+   background:#edeceb; color:black; border:1px solid #963;
+   font-size:10pt; margin-right:10px;}
+div#regJustTopics, div#vdJustTopics {
+   display:block; margin:10px 0px 0px; padding:3px;
+   border:1px solid #963; border-radius:3px; background:white;
+   height:calc(100% - 160px); overflow-y:auto;}
+div#regJustTopics p, div#vdJustTopics p {
+   font-size:11pt; text-align:left; margin:0px 0px 5px 3em;
+   text-indent:-3em;
+   -webkit-hyphens:auto; -moz-hyphens:auto; -ms-hyphens:auto; hyphens:auto;}
+div#regJustTopics p span, div#vdJustTopics p span {
+   color:gray;}
+div#regJustTopics p b, div#vdJustTopics p b {
+   color:#963;}
+div#regJustTopics p b:hover, div#vdJustTopics p b:hover {
+   text-decoration:underline; cursor:pointer;}
+div#regJustTopics p.wrn b, div#vdJustTopics p.wrn b {
+   color:#c00;}
+.wrn {
+   color:#c00;}
+
+/* МОДАЛЬНОЕ ОКНО ЗАПРОСА URL ССЫЛКИ В ДОМАШНЕМ ЗАДАНИИ
+   ----------------------------------------------------- */
+div#hrefQuery {
+   width:30em; max-width:90%; position:absolute; top:40px; right:1%;
+   padding:10px; border:1px solid #963; border-radius:10px;
+   box-shadow: 2px 2px 3px 2px #999; text-align:center;
+   background:#efe; z-index:999999;}
+div#hrefQuery input {
+   width:26em; max-width:80%;}
+div#hrefQuery button {
+   display:block; margin:5px auto; width:26em; max-width:80%; background:#963;
+   color:#ff6; border:none; cursor: pointer; padding:3px 10px;
+   font-weight:bold; border-radius:3px;}
+   
+/* ВЫБОР ВЕСА ОТМЕТОК И КОЛИЧЕСТВА ЧАСОВ ПРИ ВВОДЕ ТЕМЫ
+   ----------------------------------------------------- */
+select#regTopWeight, select#regTopVol, select#vdTopWeight, select#vdTopVol {
+   padding:0px; font-size:90%; font-weight:bold;
+   text-align:center; text-align-last: center;}
+select#regTopVol, select#vdTopVol {
+   margin-right:10px;}
+   
+/* МОБИЛЬНАЯ ВЕРСИЯ
+   ----------------------------------------------------- */
+@media (max-width: 960px) {
+   #register div, #vdreg div {
+      display:block;}
+   div#regGrades, div#regTopics, div#vdGrades, div#vdTopics {
+      width:98%; margin:5px auto;}
+   div#regTopics, div#vdTopics {
+      height:800px;}   
+}

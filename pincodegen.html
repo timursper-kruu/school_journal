@@ -1,0 +1,77 @@
+<!DOCTYPE html><html lang="ru"><head><script>"use strict";
+
+const salt = "abcde";
+
+</script>
+<!--
+      ЭЛЕКТРОННЫЙ ЖУРНАЛ «ШКАЛА»: ПОЛУЧЕНИЕ ПИН-КОДА ДЛЯ ВЫСТАВЛЕНИЯ
+      ОТМЕТКИ ПОСЛЕ ДАТЫ ЗАПРЕТА НА РЕДАКТИРОВАНИЕ ОТМЕТОК
+      Copyright © 2021, А.М.Гольдин. Modified BSD License
+-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Cache-Control" content="no-cache">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>ЭЖ «Шкала»: Пин-код</title>
+<style>
+   body {margin: 0px; padding: 10px 0px; font: 18px sans-serif;
+      text-align: center; border-top: 30px solid #963;
+      background: #f6f3f0;}
+   h1, h3 {color:#963; margin:12pt 0px 6pt; font-size:1.3em;
+      font-weight: normal;}
+   h2 {color: #ff6; font: 18px sans-serif;
+      position: absolute; top: -9px; left: 20px;}
+   h3 {font-size:1.1em;}
+   input[type="text"], button {display: block; margin: 20px auto;
+      font-size: 120%;}
+   input[type="number"], input[type="date"], select {font-size: 120%;}
+   input[type="number"] {width: 3em;}
+   button.inline {display: inline; margin: 0px; position: relative; top: -5px;}
+   input[type="text"] {margin-top: 20px; padding: 5px; border: 1px solid #c60;
+      border-radius: 3px;}
+   output {display: inline-block; width: 4em; background: white;
+      padding: 5px; border: 1px solid #c60; border-radius: 3px;
+      font-size: 200%; color: red;}
+   div {width: 100%; color: red; margin: 20px 0px;}
+</style>
+</head>
+<body>
+
+<h2>ЭЖ «ШКАЛА»</h2>
+<h1>ПИН-КОД ДЛЯ РЕДАКТИРОВАНИЯ ОТМЕТОК</h1>
+<input type="text" placeholder="Логин учителя" autofocus>
+<h3>Класс/группа</h3>
+<input type="number" min="1" max="99" value="8"><select></select>
+<h3>Дата, для которой нужно предоставить права редактирования</h3>
+<input type=date>
+<button type="button" onclick="getPwd()">Получить ПИН-код</button>
+<output>&nbsp;</output>
+<button class="inline" type="button" onclick="delPwd()">&#10060;</button>
+<div>ПИН-код действителен только сегодня!</div>
+
+<script>"use strict";
+const dqs = elem => document.querySelector(elem);
+const delPwd = () => dqs("output").innerHTML = "&nbsp;";
+const getPwd = () => {
+   const dtf = d => d.toString().padStart(2, '0');
+   let now = new Date(),   
+   dn = 'd'+now.getFullYear()+dtf(now.getMonth()+1)+dtf(now.getDate()),
+   dq = dqs("input[type=date]").value,
+   lg = dqs("input[type=text]").value.trim(),
+   cl = dqs("input[type=number]").value + dqs("select").value,
+   str = lg + cl + dn + dq;
+
+   let pwd = '', s, h = 0;
+   for (let j = 0; j < 4; j++) {
+      s = salt + j + str;
+      for (let i=0; i<s.length; i++) h = ((h << 5) - h) + s.charCodeAt(i);
+      pwd += Math.abs(h) % 10;
+   }
+   dqs("output").innerHTML = pwd;
+}
+
+const liters = "АБВГДЕЖЗИКЛМНОПРСТУФХЦЧШЩЫЭЮЯ";
+for (let c of liters) dqs("select").innerHTML += `<option>${c}</option>`;
+</script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+   "PORT":     443,
+   "SERVER":   "ScoleServer",
+   "ERR404":   "<h1>404</h1><hr><address>ScoleServer</address>",
+   "MIME":   {
+      "svg":   "image/svg+xml",
+      "gif":   "image/gif",
+      "css":   "text/css",
+      "txt":   "text/plain",
+      "html":  "text/html",
+      "js":    "text/javascript",
+      "ico":   "image/x-icon",
+      "otf":   "font/otf"
+   },
+   "PWD":      "ciTWya8Qhen4Xj9COavVdgEY",
+   "SALT":     "tyio",
+   "SALTPIN":  "tyio",
+   "ADMIN":    "vk.com/vasya-pupkin",
+   "KEYPATH":  "key.pem",
+   "CERTPATH": "cert.pem",
+   "CAPATH":   ""
+}

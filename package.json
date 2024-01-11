@@ -1,0 +1,16 @@
+{
+  "name": "scole",
+  "version": "1.5.446",
+  "description": "Электронный журнал общеобразовательной организации",
+  "main": "server.js",
+  "author": {
+    "name": "Александр Гольдин",
+    "email": "a@goldin.su",
+    "url": "http://goldin.su/"
+  },
+  "license": "Modified BSD License",
+  "homepage": "https://scole.goldin.su/",
+  "dependencies": {
+    "@yetzt/nedb": "^1.8.0"
+  }
+}
